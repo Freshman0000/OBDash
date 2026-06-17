@@ -23,17 +23,21 @@ export const MAP_STYLES = [
   { id: 'positron', name: 'POSITRON', url: 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', description: 'MINIMAL_CLEAN' }
 ];
 
-const MapUpdater: React.FC<{ center?: [number, number], zoom?: number, bounds?: L.LatLngBoundsExpression, is3D?: boolean, isOverview?: boolean }> = ({ center, zoom, bounds, is3D, isOverview }) => {
+const MapUpdater: React.FC<{ center?: [number, number], zoom?: number, bounds?: L.LatLngBounds, is3D?: boolean, isOverview?: boolean }> = ({ center, zoom, bounds, is3D, isOverview }) => {
   const map = useMap();
   const lastCenter = useRef<[number, number] | null>(null);
 
   useEffect(() => {
     // Safety check for bounds
-    if (bounds && bounds instanceof L.LatLngBounds && bounds.isValid()) {
+    if (bounds && bounds instanceof L.LatLngBounds && typeof bounds.isValid === 'function' && bounds.isValid()) {
       try {
-        map.flyToBounds(bounds, { padding: [50, 50], duration: 1 });
-        lastCenter.current = center || null;
-        return;
+        const ne = bounds.getNorthEast();
+        const sw = bounds.getSouthWest();
+        if (ne && sw && !isNaN(ne.lat) && !isNaN(ne.lng) && !isNaN(sw.lat) && !isNaN(sw.lng)) {
+          map.flyToBounds(bounds, { padding: [50, 50], duration: 1 });
+          lastCenter.current = center || null;
+          return;
+        }
       } catch (e) {
         console.error("Leaflet flyToBounds error:", e);
       }
@@ -55,7 +59,8 @@ const MapUpdater: React.FC<{ center?: [number, number], zoom?: number, bounds?: 
       }
 
       try {
-        const currentZoom = map.getZoom();
+        const rawZoom = map.getZoom();
+        const currentZoom = (typeof rawZoom === 'number' && !isNaN(rawZoom) && isFinite(rawZoom)) ? rawZoom : 15;
         const targetZoom = (typeof zoom === 'number' && !isNaN(zoom) && isFinite(zoom)) ? zoom : currentZoom;
         
         if (shouldAnimate) {
@@ -188,9 +193,7 @@ export const MapComponent: React.FC<MapComponentProps> = ({ theme, navState, coo
             zoom={overviewZoom} 
             scrollWheelZoom={false} 
             zoomControl={false}
-            maxBounds={regionBounds}
-            maxBoundsViscosity={1.0}
-            minZoom={6}
+            minZoom={3}
             className="w-full h-full"
             style={{ height: '100%', width: '100%', background: '#000' }}
           >
