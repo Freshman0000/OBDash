@@ -3,6 +3,11 @@
 
 <img width="3120" height="1440" alt="Screenshot_20260617_114128_Chrome" src="https://github.com/user-attachments/assets/4a992fa7-2af1-4fff-89c6-919ee3ae2b11" />
 
+<img width="3120" height="1440" alt="Screenshot_20260617_113853_Chrome" src="https://github.com/user-attachments/assets/a943c55a-cdd7-4144-b2b4-32fcbbc4f283" />
+
+<img width="3120" height="1440" alt="Screenshot_20260617_113925_Chrome" src="https://github.com/user-attachments/assets/35daea70-6163-47c9-9886-e3a7bd4f91e0" />
+
+<img width="3120" height="1440" alt="Screenshot_20260617_113853_Chrome" src="https://github.com/user-attachments/assets/eecd0110-0084-471e-9c77-cb11c17ad5b5" />
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=for-the-badge&logo=typescript" />
@@ -40,11 +45,12 @@ Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings
 ### 3. Other Immersive Theme Schemes
 
 
-* <img width="3120" height="1440" alt="Screenshot_20260617_113707_Chrome" src="https://github.com/user-attachments/assets/7cd46f29-3f3a-4d07-bd77-1485f5c70981" />
+<img width="3120" height="1440" alt="Screenshot_20260617_113707_Chrome" src="https://github.com/user-attachments/assets/7cd46f29-3f3a-4d07-bd77-1485f5c70981" />
 
 <img width="3120" height="1440" alt="Screenshot_20260617_113745_Chrome" src="https://github.com/user-attachments/assets/e9cc1052-b0ca-4203-8c8f-515be1b65c86" />
 
-<img width="3120" height="1440" alt="Screenshot_20260617_113745_Chrome" src="https://github.com/user-attachments/assets/09e39336-f245-4c33-a4d1-3ec48ee84830" />
+<img width="3120" height="1440" alt="Screenshot_20260617_113719_Chrome" src="https://github.com/user-attachments/assets/68b57c72-95ec-471b-abd0-1cf1bf874e49" />
+
 
   **Carbon Sweep**: Smooth sweeping LEDs set against a high-contrast real-woven carbon fabric pattern.
 *   **Retro Digital Arcade**: Interactive, neon synthwave pink-to-cyan theme with scanning grid lines and glowing pixel art displays.
