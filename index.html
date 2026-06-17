@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/icon.svg">
+    <title>OBDash | Hyper-Telemetry</title>
+    <script>
+      window.addEventListener('error', (e) => {
+        if (e.message === 'ResizeObserver loop completed with undelivered notifications.' || e.message === 'ResizeObserver loop limit exceeded') {
+          const resizeObserverErrDiv = document.getElementById('webpack-dev-server-client-overlay-div');
+          const resizeObserverErr = document.getElementById('webpack-dev-server-client-overlay');
+          if (resizeObserverErr) resizeObserverErr.style.display = 'none';
+          if (resizeObserverErrDiv) resizeObserverErrDiv.style.display = 'none';
+          e.stopImmediatePropagation();
+        }
+      });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Barlow+Condensed:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Montserrat:wght@700;800;900&family=Questrial&family=Teko:wght@500;700&family=Bebas+Neue&family=Chakra+Petch:wght@500;700&family=Wallpoet&family=Black+Ops+One&family=Michroma&family=Audiowide&family=Righteous&family=Syncopate:wght@400;700&family=Russo+One&family=Anton&family=Oswald:wght@200..700&family=VT323&family=DotGothic16&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+    <link rel="stylesheet" href="/index.css">
+    <style>
+      #static-splash {
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(circle at center, #111, #000);
+        z-index: 999999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+      }
+      #static-splash.hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .splash-logo {
+        width: 120px;
+        height: 120px;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      .splash-text {
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: 3rem;
+        color: white;
+        margin-top: 2rem;
+        letter-spacing: 0.2em;
+        text-shadow: 0 0 20px rgba(255,17,17,0.5);
+      }
+      .splash-sub {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: 0.8rem;
+        color: rgba(255,255,255,0.4);
+        margin-top: 1rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+      }
+      .splash-loader {
+        margin-top: 3rem;
+        width: 200px;
+        height: 2px;
+        background: rgba(255,255,255,0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      .splash-loader::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; bottom: 0;
+        width: 50%;
+        background: #ff1111;
+        box-shadow: 0 0 10px #ff1111;
+        animation: load 1.5s ease-in-out infinite alternate;
+      }
+      @keyframes load {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(200%); }
+      }
+      @keyframes pulse {
+        0%, 100% { filter: drop-shadow(0 0 20px rgba(255,17,17,0.5)); transform: scale(1); }
+        50% { filter: drop-shadow(0 0 40px #ff1111); transform: scale(1.05); }
+      }
+    </style>
+</head>
+<body>
+    <div id="static-splash">
+       <img src="/icon.svg" class="splash-logo" alt="OBDash Logo" />
+       <div class="splash-text">OBDash</div>
+       <div class="splash-sub">Booting Telemetry OS</div>
+       <div class="splash-loader"></div>
+    </div>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+<script>
+  window.addEventListener('load', () => {
+     setTimeout(() => {
+        const splash = document.getElementById('static-splash');
+        if(splash) splash.classList.add('hidden');
+     }, 1500); // Minimum splash time for premium feel
+  });
+</script>
+</body>
+</html>

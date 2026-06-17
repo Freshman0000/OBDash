@@ -1,0 +1,10 @@
+import fs from 'fs';
+let content = fs.readFileSync('components/Gauge.tsx', 'utf8');
+content = content.replace(/font-micro">MPH/g, 'font-micro-bold">MPH');
+content = content.replace(/font-micro">RPM/g, 'font-micro-bold">RPM');
+content = content.replace(/font-micro drop-shadow/g, 'font-micro-bold drop-shadow');
+content = content.replace(/font-micro italic">MPH/g, 'font-micro-bold italic">MPH');
+content = content.replace(/font-micro italic">RPM/g, 'font-micro-bold italic">RPM');
+content = content.replace(/font-micro skew-x-12/g, 'font-micro-bold skew-x-12');
+fs.writeFileSync('components/Gauge.tsx', content);
+console.log('Done replacing font-micro with font-micro-bold');
