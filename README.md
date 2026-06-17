@@ -1,9 +1,8 @@
 # OBDash 🏎️💨
 ### *Premium High-Fidelity Custom Digital Gauge Cluster & OBDII Telemetry System*
 
-<p align="center">
-  <img src="public/images/dashboard_main_showcase.jpg" width="100%" alt="OBDash Widescreen Showcase" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
-</p>
+<img width="3120" height="1440" alt="Screenshot_20260617_114128_Chrome" src="https://github.com/user-attachments/assets/4a992fa7-2af1-4fff-89c6-919ee3ae2b11" />
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=for-the-badge&logo=typescript" />
@@ -21,6 +20,7 @@
 
 It accepts high-frequency live real-time variables corresponding to OBD-II outputs (like Boost PSI, RPM, Coolant and Oil Temperatures, Battery Volts, Engine Load, and Throttle Position) and drives ultra-precise, design-crafted physical renderings.
 
+
 ---
 
 ## 🎨 Featured Skins Gallery
@@ -29,26 +29,24 @@ OBDash is fully skin-customizable. Drivers can switch between unique themes at t
 
 ### 1. F1 LCD Precision Dashboard
 Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings high-density motorsport telemetry into sharp focus.
-<p align="center">
-  <img src="public/images/f1_precision_skin.jpg" width="70%" alt="F1 Precision LCD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
-</p>
+
+<img width="3120" height="1440" alt="Screenshot_20260617_113726_Chrome" src="https://github.com/user-attachments/assets/a140aaf8-76c1-40d2-b824-6192e5934d99" />
 
 *   **Sequential Shift LED Beam**: Dynamic green-yellow-red-blue indicator row prompting ideal shifting frames.
 *   **Massive Center Gear Registry**: Oversized hyper-legible gear display.
 *   **Motorsport Matrix Telemetry**: Embedded telemetry modules displaying real-time Boost, Engine Load, Throttle %, and crucial battery and oil metrics.
 
-### 2. Fighter Jet HUD (Heads-Up Display)
-Inspired by military-grade aviation, the Tactical HUD uses bright neon vector ribbons and target reticles for high-speed tracking.
-<p align="center">
-  <img src="public/images/hud_tactical_skin.jpg" width="70%" alt="Fighter Jet HUD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
-</p>
-
-*   **Aviation Ribbons**: Interactive scrolling speed and altitude ribbons matching current drive states.
-*   **Concentric Radar Scope**: Simulates localized sweeping coordinates linked to active lateral forces.
-*   **Aero-Fluorescent Dial Geometry**: Tactical data grids for temperature and pressure levels.
 
 ### 3. Other Immersive Theme Schemes
-*   **Carbon Sweep**: Smooth sweeping LEDs set against a high-contrast real-woven carbon fabric pattern.
+
+
+* <img width="3120" height="1440" alt="Screenshot_20260617_113707_Chrome" src="https://github.com/user-attachments/assets/7cd46f29-3f3a-4d07-bd77-1485f5c70981" />
+
+<img width="3120" height="1440" alt="Screenshot_20260617_113745_Chrome" src="https://github.com/user-attachments/assets/e9cc1052-b0ca-4203-8c8f-515be1b65c86" />
+
+<img width="3120" height="1440" alt="Screenshot_20260617_113745_Chrome" src="https://github.com/user-attachments/assets/09e39336-f245-4c33-a4d1-3ec48ee84830" />
+
+  **Carbon Sweep**: Smooth sweeping LEDs set against a high-contrast real-woven carbon fabric pattern.
 *   **Retro Digital Arcade**: Interactive, neon synthwave pink-to-cyan theme with scanning grid lines and glowing pixel art displays.
 *   **Modern EV Range**: Elegant design clean-spaces focused on current charge, efficiency metrics (`mi/kWh`), and quiet minimalist layouts.
 *   **Perspective Cluster**: Multi-layered 2.5D visual depth using subtle spatial isometric scaling that shifts gracefully with speed.
@@ -59,7 +57,8 @@ Inspired by military-grade aviation, the Tactical HUD uses bright neon vector ri
 ## ⚙️ Technical Highlights
 
 ### ⚡ State Damping & Telemetry Feeds
-The virtual dials implement customized React interpolation models simulating gauge weight and physical momentum:
+The virtual dials implement customized React interpolation
+models simulating gauge weight and physical momentum:
 - Snapping needles are smoothed using spring physics configs (`tension: 300, friction: 20`).
 - Shift shocks shake needle root bones for `0.15s` on gear transitions to mimic mechanical feel.
 
