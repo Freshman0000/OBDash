@@ -3,7 +3,10 @@
 
 <img width="3120" height="1440" alt="Screenshot_20260617_114128_Chrome" src="https://github.com/user-attachments/assets/4a992fa7-2af1-4fff-89c6-919ee3ae2b11" />
 
-<img width="3120" height="1440" alt="Screenshot_20260617_113853_Chrome" src="https://github.com/user-attachments/assets/a943c55a-cdd7-4144-b2b4-32fcbbc4f283" />
+<img width="3120" height="1440" alt="Screenshot_20260617_113839_Chrome" src="https://github.com/user-attachments/assets/4d4b6a9e-e444-47ea-87a9-dc93ffa49c08" />
+
+<img width="3120" height="1440" alt="Screenshot_20260617_113828_Chrome" src="https://github.com/user-attachments/assets/261dcae6-8649-4a7f-9859-741b23b7a48e" />
+
 
 <img width="3120" height="1440" alt="Screenshot_20260617_113925_Chrome" src="https://github.com/user-attachments/assets/35daea70-6163-47c9-9886-e3a7bd4f91e0" />
 
