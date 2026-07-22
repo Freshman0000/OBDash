@@ -11,10 +11,11 @@ import { Equalizer } from './components/Equalizer';
 import { Navigation, MiniMap } from './components/Navigation';
 import { CustomizationPage } from './components/CustomizationPage';
 import { SkinDesigner } from './components/SkinDesigner';
+import { AppLauncher } from './components/AppLauncher';
 import { 
   Settings as SettingsIcon, Music, Gauge as GaugeIcon, ChevronLeft, ChevronRight, 
   Map as MapIcon, Maximize2, Minimize2, X, Activity, Info, CloudSun, Speaker, Bluetooth, RadioReceiver, MapPin, Link as LinkIcon, Navigation2, Cpu, Radio, Palette, Wifi, Sliders, Zap,
-  Sun, Cloud, CloudRain, Snowflake, CloudLightning, Wind, Layers, Lock, Trash2, RefreshCw, Droplet, Thermometer, Fuel, Phone, MessageSquare, User, Search, Car, Type, Terminal, AlertTriangle, LayoutGrid
+  Sun, Cloud, CloudRain, Snowflake, CloudLightning, Wind, Layers, Lock, Trash2, RefreshCw, Droplet, Thermometer, Fuel, Phone, MessageSquare, User, Search, Car, Type, Terminal, AlertTriangle, LayoutGrid, Gamepad2
 } from 'lucide-react';
 
 declare global {
@@ -321,7 +322,7 @@ const App: React.FC = () => {
   const rawDataRef = useRef<VehicleData>(obdService.getData());
   const lastStateUpdateTime = useRef<number>(0);
   const lastAnimUpdateTime = useRef<number>(0);
-  const [currentPage, setCurrentPage] = useState<'dash' | 'gauge' | 'music' | 'navigation' | 'settings' | 'customization'>('dash');
+  const [currentPage, setCurrentPage] = useState<'dash' | 'gauge' | 'music' | 'navigation' | 'settings' | 'customization' | 'launcher'>('dash');
   const [isScanningWifi, setIsScanningWifi] = useState(false);
   const [activeProfile, setActiveProfile] = useState<ConnectionProfile>('STANDARD');
   const [telemetrySource, setTelemetrySource] = useState<'OBD' | 'GPS'>('OBD');
@@ -924,6 +925,18 @@ const App: React.FC = () => {
           </div>
         )}
 
+        {currentPage === 'launcher' && (
+          <div className={`flex-grow h-full leading-relaxed overflow-hidden relative rounded-[3.5rem] bg-black/95 border border-white/10 shadow-4xl animate-in fade-in ${getOverlayClass()}`}>
+            <AppLauncher 
+              theme={activeTheme} 
+              vehicleData={currentData} 
+              onNavigateToPage={setCurrentPage}
+              isSimulating={isSimulatingPids}
+              onToggleSimulation={setIsSimulatingPids}
+            />
+          </div>
+        )}
+
         {currentPage === 'customization' && (
           <CustomizationPage 
             themeOverrides={themeOverrides} 
@@ -1227,18 +1240,21 @@ const App: React.FC = () => {
           </button>
           
           <div className="flex-1 flex justify-start lg:justify-center gap-2 h-full py-2 items-center mx-2 lg:mx-4 overflow-x-auto overflow-y-hidden no-scrollbar w-full relative touch-pan-x">
-             <div className="flex gap-2 min-w-max px-2 w-full lg:w-auto lg:grid lg:grid-cols-6 h-[50px]">
+             <div className="flex gap-2 min-w-max px-2 w-full lg:w-auto lg:grid lg:grid-cols-7 h-[50px]">
                  <button onClick={() => setCurrentPage('dash')} className={`px-3 lg:px-6 h-full rounded-xl font-bold uppercase tracking-widest text-[10px] lg:text-[11px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 flex-1 min-w-[110px] lg:min-w-0 ${currentPage === 'dash' ? 'bg-[#1a1a1a] shadow-[inset_0_4px_10px_rgba(0,0,0,0.9),_0_0_15px_rgba(56,189,248,0.2)] text-sky-400 border border-sky-500/50' : 'bg-gradient-to-b from-[#2a2a2a] to-[#111111] border-t border-white/20 border-b border-black shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_4px_8px_rgba(0,0,0,0.8)] text-white/70 hover:text-white hover:border-white/30'}`}>
                     <LayoutGrid size={16} /> <span className="pt-0.5">DASH</span>
                  </button>
                  <button onClick={() => setCurrentPage('gauge')} className={`px-3 lg:px-6 h-full rounded-xl font-bold uppercase tracking-widest text-[10px] lg:text-[11px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 flex-1 min-w-[110px] lg:min-w-0 ${currentPage === 'gauge' ? 'bg-[#1a1a1a] shadow-[inset_0_4px_10px_rgba(0,0,0,0.9),_0_0_15px_rgba(251,113,133,0.2)] text-rose-400 border border-rose-500/50' : 'bg-gradient-to-b from-[#2a2a2a] to-[#111111] border-t border-white/20 border-b border-black shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_4px_8px_rgba(0,0,0,0.8)] text-white/70 hover:text-white hover:border-white/30'}`}>
                     <GaugeIcon size={16} /> <span className="pt-0.5">GAUGES</span>
                  </button>
-                 <button onClick={() => setCurrentPage('navigation')} className={`px-3 lg:px-6 h-full rounded-xl font-bold uppercase tracking-widest text-[10px] lg:text-[11px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 flex-1 min-w-[110px] lg:min-w-0 ${currentPage === 'navigation' ? 'bg-[#1a1a1a] shadow-[inset_0_4px_10px_rgba(0,0,0,0.9),_0_0_15px_rgba(96,165,250,0.2)] text-blue-400 border border-blue-500/50' : 'bg-gradient-to-b from-[#2a2a2a] to-[#111111] border-t border-white/20 border-b border-black shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_4px_8px_rgba(0,0,0,0.8)] text-white/70 hover:text-white hover:border-white/30'}`}>
+                 <button onClick={() => setCurrentPage('navigation')} className={`px-3 lg:px-6 h-full rounded-xl font-bold uppercase tracking-widest text-[10px] lg:text-[11px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 flex-1 min-w-[110px], lg:min-w-0 ${currentPage === 'navigation' ? 'bg-[#1a1a1a] shadow-[inset_0_4px_10px_rgba(0,0,0,0.9),_0_0_15px_rgba(96,165,250,0.2)] text-blue-400 border border-blue-500/50' : 'bg-gradient-to-b from-[#2a2a2a] to-[#111111] border-t border-white/20 border-b border-black shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_4px_8px_rgba(0,0,0,0.8)] text-white/70 hover:text-white hover:border-white/30'}`}>
                     <MapIcon size={16} /> <span className="pt-0.5">NAV</span>
                  </button>
                  <button onClick={() => setCurrentPage('music')} className={`px-3 lg:px-6 h-full rounded-xl font-bold uppercase tracking-widest text-[10px] lg:text-[11px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 flex-1 min-w-[110px] lg:min-w-0 ${currentPage === 'music' ? 'bg-[#1a1a1a] shadow-[inset_0_4px_10px_rgba(0,0,0,0.9),_0_0_15px_rgba(52,211,153,0.2)] text-emerald-400 border border-emerald-500/50' : 'bg-gradient-to-b from-[#2a2a2a] to-[#111111] border-t border-white/20 border-b border-black shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_4px_8px_rgba(0,0,0,0.8)] text-white/70 hover:text-white hover:border-white/30'}`}>
                     <Music size={16} /> <span className="pt-0.5">DSP</span>
+                 </button>
+                 <button onClick={() => setCurrentPage('launcher')} className={`px-3 lg:px-6 h-full rounded-xl font-bold uppercase tracking-widest text-[10px] lg:text-[11px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 flex-1 min-w-[110px] lg:min-w-0 ${currentPage === 'launcher' ? 'bg-[#1a1a1a] shadow-[inset_0_4px_10px_rgba(0,0,0,0.9),_0_0_15px_rgba(168,85,247,0.2)] text-[#a855f7] border border-purple-500/50' : 'bg-gradient-to-b from-[#2a2a2a] to-[#111111] border-t border-white/20 border-b border-black shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_4px_8px_rgba(0,0,0,0.8)] text-white/70 hover:text-white hover:border-white/30'}`}>
+                    <Gamepad2 size={16} /> <span className="pt-0.5">APPS</span>
                  </button>
                  <button onClick={() => setCurrentPage('customization')} className={`px-3 lg:px-6 h-full rounded-xl font-bold uppercase tracking-widest text-[10px] lg:text-[11px] transition-all active:scale-[0.98] flex items-center justify-center gap-2 flex-1 min-w-[110px] lg:min-w-0 ${currentPage === 'customization' ? 'bg-[#1a1a1a] shadow-[inset_0_4px_10px_rgba(0,0,0,0.9),_0_0_15px_rgba(251,191,36,0.2)] text-amber-400 border border-amber-500/50' : 'bg-gradient-to-b from-[#2a2a2a] to-[#111111] border-t border-white/20 border-b border-black shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_4px_8px_rgba(0,0,0,0.8)] text-white/70 hover:text-white hover:border-white/30'}`}>
                     <Palette size={16} /> <span className="pt-0.5">TWEAKS</span>

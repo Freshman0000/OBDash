@@ -28,53 +28,72 @@ const MapUpdater: React.FC<{ center?: [number, number], zoom?: number, bounds?: 
   const lastCenter = useRef<[number, number] | null>(null);
 
   useEffect(() => {
-    // Safety check for bounds
-    if (bounds && bounds instanceof L.LatLngBounds && typeof bounds.isValid === 'function' && bounds.isValid()) {
-      try {
-        const ne = bounds.getNorthEast();
-        const sw = bounds.getSouthWest();
-        if (ne && sw && !isNaN(ne.lat) && !isNaN(ne.lng) && !isNaN(sw.lat) && !isNaN(sw.lng)) {
-          map.flyToBounds(bounds, { padding: [50, 50], duration: 1 });
-          lastCenter.current = center || null;
-          return;
+    try {
+      // Safety check for bounds
+      if (bounds && bounds instanceof L.LatLngBounds && typeof bounds.isValid === 'function' && bounds.isValid()) {
+        try {
+          const ne = bounds.getNorthEast();
+          const sw = bounds.getSouthWest();
+          if (ne && sw && 
+              typeof ne.lat === 'number' && !isNaN(ne.lat) && isFinite(ne.lat) &&
+              typeof ne.lng === 'number' && !isNaN(ne.lng) && isFinite(ne.lng) &&
+              typeof sw.lat === 'number' && !isNaN(sw.lat) && isFinite(sw.lat) &&
+              typeof sw.lng === 'number' && !isNaN(sw.lng) && isFinite(sw.lng)) {
+            map.flyToBounds(bounds, { padding: [50, 50], duration: 1 });
+            lastCenter.current = center || null;
+            return;
+          }
+        } catch (e) {
+          console.error("Leaflet flyToBounds error:", e);
         }
-      } catch (e) {
-        console.error("Leaflet flyToBounds error:", e);
       }
-    }
 
-    // Safety check for center - ensure it's a valid LatLng array
-    if (center && Array.isArray(center) && center.length === 2 &&
-        typeof center[0] === 'number' && !isNaN(center[0]) && isFinite(center[0]) && 
-        typeof center[1] === 'number' && !isNaN(center[1]) && isFinite(center[1])) {
-      let shouldAnimate = false;
-      if (lastCenter.current && Array.isArray(lastCenter.current) && lastCenter.current.length === 2) {
-        const dLat = Math.abs(center[0] - lastCenter.current[0]);
-        const dLng = Math.abs(center[1] - lastCenter.current[1]);
-        if (dLat > 0.01 || dLng > 0.01) {
+      // Safety check for center - ensure it's a valid LatLng array
+      if (center && Array.isArray(center) && center.length === 2 &&
+          typeof center[0] === 'number' && !isNaN(center[0]) && isFinite(center[0]) && 
+          typeof center[1] === 'number' && !isNaN(center[1]) && isFinite(center[1])) {
+        let shouldAnimate = false;
+        if (lastCenter.current && Array.isArray(lastCenter.current) && lastCenter.current.length === 2 &&
+            typeof lastCenter.current[0] === 'number' && !isNaN(lastCenter.current[0]) &&
+            typeof lastCenter.current[1] === 'number' && !isNaN(lastCenter.current[1])) {
+          const dLat = Math.abs(center[0] - lastCenter.current[0]);
+          const dLng = Math.abs(center[1] - lastCenter.current[1]);
+          if (dLat > 0.01 || dLng > 0.01) {
+            shouldAnimate = true;
+          }
+        } else {
           shouldAnimate = true;
         }
-      } else {
-        shouldAnimate = true;
-      }
 
-      try {
-        const rawZoom = map.getZoom();
-        const currentZoom = (typeof rawZoom === 'number' && !isNaN(rawZoom) && isFinite(rawZoom)) ? rawZoom : 15;
-        const targetZoom = (typeof zoom === 'number' && !isNaN(zoom) && isFinite(zoom)) ? zoom : currentZoom;
-        
-        if (shouldAnimate) {
-          map.flyTo(center as L.LatLngExpression, targetZoom, { animate: true, duration: 0.5 });
-        } else {
-          map.panTo(center as L.LatLngExpression, { animate: true, duration: 0.1, easeLinearity: 1 });
-          if (targetZoom !== currentZoom) {
-            map.setZoom(targetZoom, { animate: true });
+        try {
+          const rawZoom = map.getZoom();
+          const currentZoom = (typeof rawZoom === 'number' && !isNaN(rawZoom) && isFinite(rawZoom)) ? rawZoom : 15;
+          const targetZoom = (typeof zoom === 'number' && !isNaN(zoom) && isFinite(zoom)) ? zoom : currentZoom;
+
+          const mapCenterState = map.getCenter();
+          if (!mapCenterState || typeof mapCenterState.lat !== 'number' || isNaN(mapCenterState.lat) || !isFinite(mapCenterState.lat) ||
+              typeof mapCenterState.lng !== 'number' || isNaN(mapCenterState.lng) || !isFinite(mapCenterState.lng)) {
+            // Map's current state is invalid/uninitialized/corrupted, use setView to force-reset safely without crash
+            map.setView(center as L.LatLngExpression, targetZoom);
+            lastCenter.current = center;
+            return;
           }
+          
+          if (shouldAnimate) {
+            map.flyTo(center as L.LatLngExpression, targetZoom, { animate: true, duration: 0.5 });
+          } else {
+            map.panTo(center as L.LatLngExpression, { animate: true, duration: 0.1, easeLinearity: 1 });
+            if (targetZoom !== currentZoom) {
+              map.setZoom(targetZoom, { animate: true });
+            }
+          }
+          lastCenter.current = center;
+        } catch (e) {
+          console.error("Leaflet internal panTo/flyTo error:", e);
         }
-        lastCenter.current = center;
-      } catch (e) {
-        console.error("Leaflet panTo/flyTo error:", e);
       }
+    } catch (e) {
+      console.error("Leaflet external boundary safeguard caught exception:", e);
     }
   }, [center, zoom, bounds, map]);
 

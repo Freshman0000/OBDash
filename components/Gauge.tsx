@@ -32,7 +32,6 @@ import { PerspectiveClusterGauge } from "./PerspectiveClusterGauge";
 import { FuturisticGraphGauge } from "./FuturisticGraphGauge";
 import { PremiumCircularGauge } from "./PremiumCircularGauge";
 import { RacingHorizontalGauge } from "./RacingHorizontalGauge";
-import { QuasarGauge } from "./QuasarGauge";
 import { DigitalDashRetro } from "./DigitalDashRetro";
 import { FighterJetHUDGauge as FighterJetHUDGaugeImported } from "./FighterJetHUDGauge";
 
@@ -4867,12 +4866,6 @@ const GAUGE_SKINS = THEMES.map((theme, index) => {
 
   
   
-  if (theme.gaugeType === "quasar") {
-    const SkinComponent: React.FC<GaugeProps> = (props) => {
-      return <QuasarGauge {...props} theme={theme} />;
-    };
-    return SkinComponent;
-  }
   if (theme.gaugeType === "ev-modern") {
     const SkinComponent: React.FC<GaugeProps> = (props) => {
       return <ModernEVGauge {...props} theme={theme} />;

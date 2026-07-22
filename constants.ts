@@ -129,13 +129,7 @@ export const THEMES: ThemeConfig[] = [
   // 29. LFA Concept
   { id: 'lfa-concept', name: 'APEX_V10_PRO', style: 'luxury', layout: 'standard', primaryColor: '#7c3aed', secondaryColor: '#000000', accentColor: '#fbbf24', backgroundColor: '#000000', fontFamily: 'font-orbitron', texture: 'forged-carbon', gaugeType: 'luxury-alcantara-v2', showDetails: true, glowEffect: false },
 
-  // QUASAR GAUGE CLUSTERS
-  { id: 'quasar-drive', name: 'QUASAR_DRIVE', style: 'futuristic', layout: 'ultrawide', primaryColor: '#6d28d9', secondaryColor: '#050505', accentColor: '#10b981', backgroundColor: '#040d1a', fontFamily: 'font-tech', texture: 'none', gaugeType: 'quasar', showDetails: true, glowEffect: false },
-  
-  { id: 'quasar-sport', name: 'QUASAR_SPORT', style: 'performance', layout: 'ultrawide', primaryColor: '#7c3aed', secondaryColor: '#1a0b2e', accentColor: '#f43f5e', backgroundColor: '#0a0014', fontFamily: 'font-tech', texture: 'none', gaugeType: 'quasar', showDetails: true, glowEffect: false },
-  
-  { id: 'quasar-race', name: 'QUASAR_RACE', style: 'performance', layout: 'ultrawide', primaryColor: '#6d28d9', secondaryColor: '#0A0A0E', accentColor: '#f59e0b', backgroundColor: '#0f0214', fontFamily: 'font-tech', texture: 'none', gaugeType: 'quasar', showDetails: true, glowEffect: false },
-  
+
   // 30. Track Day RS
   { id: 'track-day-rs', name: 'TRACK_DAY_RS', style: 'performance', layout: 'focused', primaryColor: '#7c3aed', secondaryColor: '#000510', accentColor: '#38bdf8', backgroundColor: '#111111', fontFamily: 'font-tech', texture: 'carbon', gaugeType: 'neon-racer', showDetails: true, glowEffect: false },
 

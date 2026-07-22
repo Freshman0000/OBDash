@@ -1,33 +1,47 @@
 # OBDash 🏎️💨
-### *Premium High-Fidelity Custom Digital Gauge Cluster & OBDII Telemetry System*
 
-<img width="3120" height="1440" alt="Screenshot_20260617_114128_Chrome" src="https://github.com/user-attachments/assets/4a992fa7-2af1-4fff-89c6-919ee3ae2b11" />
+### *Premium Android Car Launcher & Custom Digital Gauge Cluster for OBD2 Telemetry*
 
-<img width="3120" height="1440" alt="Screenshot_20260617_113839_Chrome" src="https://github.com/user-attachments/assets/4d4b6a9e-e444-47ea-87a9-dc93ffa49c08" />
-
-<img width="3120" height="1440" alt="Screenshot_20260617_113828_Chrome" src="https://github.com/user-attachments/assets/261dcae6-8649-4a7f-9859-741b23b7a48e" />
-
-
-<img width="3120" height="1440" alt="Screenshot_20260617_113925_Chrome" src="https://github.com/user-attachments/assets/35daea70-6163-47c9-9886-e3a7bd4f91e0" />
-
-<img width="3120" height="1440" alt="Screenshot_20260617_113853_Chrome" src="https://github.com/user-attachments/assets/eecd0110-0084-471e-9c77-cb11c17ad5b5" />
+<p align="center">
+  <img src="public/images/dashboard_main_showcase.jpg" width="100%" alt="OBDash Widescreen Showcase" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=for-the-badge&logo=typescript" />
   <img src="https://img.shields.io/badge/Framework-React_18-61DAFB?style=for-the-badge&logo=react" />
   <img src="https://img.shields.io/badge/Style-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" />
-  <img src="https://img.shields.io/badge/Build-Vite_SPA-646CFF?style=for-the-badge&logo=vite" />
-  <img src="https://img.shields.io/badge/Platform-Web_%2F_Android-A4C639?style=for-the-badge&logo=android" />
+  <img src="https://img.shields.io/badge/Platform-Android_Head_Units-A4C639?style=for-the-badge&logo=android" />
 </p>
+
+---
+
+## 👋 A Note from the Creator
+
+**Hi everyone!** I am a first-time app designer, and I built this entirely using AI because I couldn't find anyone else making the specific, high-end digital dash and car launcher I was looking for. 
+
+Because I'm so new to this, **I really need your help!** I am looking for input from the community on how to make the app more robust, optimize the codebase, and add features that I might not have even thought of yet. Whether you're a seasoned developer, an OBD2 hardware expert, or just a car enthusiast with cool ideas, please feel free to open issues, submit pull requests, or just share your thoughts. Your feedback is what will make OBDash truly incredible!
 
 ---
 
 ## 📖 Overview
 
-**OBDash** is a state-of-the-art, high-fidelity interactive digital gauge dashboard designed for premium supercars, track enthusiasts, and advanced telemetry visualizers. Written from the ground up in **React 18 + TypeScript**, styled with **Tailwind CSS**, and optimized with smooth **Framer Motion** state transitions, OBDash mimics ultra-wide 12.3-inch (1920x720) panoramic virtual cockpits.
+**OBDash: The Ultimate Digital Cockpit & Telemetry Hub**
 
-It accepts high-frequency live real-time variables corresponding to OBD-II outputs (like Boost PSI, RPM, Coolant and Oil Temperatures, Battery Volts, Engine Load, and Throttle Position) and drives ultra-precise, design-crafted physical renderings.
+Transform your car's head unit, Android tablet, or Raspberry Pi into a **high-end digital gauge cluster and car launcher**. Built for track day enthusiasts, project car builders, and daily drivers, **OBDash** bridges the gap between luxury OEM interfaces and aggressive race-day telemetry. 
 
+Connect your **OBD2 adapter** (ELM327, OBDLink), integrate your **dashcam**, and experience real-time engine diagnostics, GPS navigation, media controls, and dashcam recording interfaces in one unified, distraction-free environment.
+
+### 🔍 Discoverability & Installation
+
+*(If you are searching for a tracker-free, open-source car launcher, you're in the right place!)*
+
+<a href="https://f-droid.org/">
+  <img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="60" />
+</a>
+
+*OBDash is fully open-source. We are currently preparing our official **F-Droid** repository release!*
+
+---
 
 ---
 
@@ -37,25 +51,26 @@ OBDash is fully skin-customizable. Drivers can switch between unique themes at t
 
 ### 1. F1 LCD Precision Dashboard
 Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings high-density motorsport telemetry into sharp focus.
-
-<img width="3120" height="1440" alt="Screenshot_20260617_113726_Chrome" src="https://github.com/user-attachments/assets/a140aaf8-76c1-40d2-b824-6192e5934d99" />
+<p align="center">
+  <img src="public/images/f1_precision_skin.jpg" width="70%" alt="F1 Precision LCD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
+</p>
 
 *   **Sequential Shift LED Beam**: Dynamic green-yellow-red-blue indicator row prompting ideal shifting frames.
 *   **Massive Center Gear Registry**: Oversized hyper-legible gear display.
 *   **Motorsport Matrix Telemetry**: Embedded telemetry modules displaying real-time Boost, Engine Load, Throttle %, and crucial battery and oil metrics.
 
+### 2. Fighter Jet HUD (Heads-Up Display)
+Inspired by military-grade aviation, the Tactical HUD uses bright neon vector ribbons and target reticles for high-speed tracking.
+<p align="center">
+  <img src="public/images/hud_tactical_skin.jpg" width="70%" alt="Fighter Jet HUD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
+</p>
+
+*   **Aviation Ribbons**: Interactive scrolling speed and altitude ribbons matching current drive states.
+*   **Concentric Radar Scope**: Simulates localized sweeping coordinates linked to active lateral forces.
+*   **Aero-Fluorescent Dial Geometry**: Tactical data grids for temperature and pressure levels.
 
 ### 3. Other Immersive Theme Schemes
-
-
-<img width="3120" height="1440" alt="Screenshot_20260617_113707_Chrome" src="https://github.com/user-attachments/assets/7cd46f29-3f3a-4d07-bd77-1485f5c70981" />
-
-<img width="3120" height="1440" alt="Screenshot_20260617_113745_Chrome" src="https://github.com/user-attachments/assets/e9cc1052-b0ca-4203-8c8f-515be1b65c86" />
-
-<img width="3120" height="1440" alt="Screenshot_20260617_113719_Chrome" src="https://github.com/user-attachments/assets/68b57c72-95ec-471b-abd0-1cf1bf874e49" />
-
-
-  **Carbon Sweep**: Smooth sweeping LEDs set against a high-contrast real-woven carbon fabric pattern.
+*   **Carbon Sweep**: Smooth sweeping LEDs set against a high-contrast real-woven carbon fabric pattern.
 *   **Retro Digital Arcade**: Interactive, neon synthwave pink-to-cyan theme with scanning grid lines and glowing pixel art displays.
 *   **Modern EV Range**: Elegant design clean-spaces focused on current charge, efficiency metrics (`mi/kWh`), and quiet minimalist layouts.
 *   **Perspective Cluster**: Multi-layered 2.5D visual depth using subtle spatial isometric scaling that shifts gracefully with speed.
@@ -66,8 +81,7 @@ Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings
 ## ⚙️ Technical Highlights
 
 ### ⚡ State Damping & Telemetry Feeds
-The virtual dials implement customized React interpolation
-models simulating gauge weight and physical momentum:
+The virtual dials implement customized React interpolation models simulating gauge weight and physical momentum:
 - Snapping needles are smoothed using spring physics configs (`tension: 300, friction: 20`).
 - Shift shocks shake needle root bones for `0.15s` on gear transitions to mimic mechanical feel.
 

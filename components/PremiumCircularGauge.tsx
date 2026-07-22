@@ -67,6 +67,65 @@ export const PremiumCircularGauge: React.FC<
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.4)_80%,rgba(0,0,0,0.8)_100%)] z-0 pointer-events-none" />
 
+      {/* INTRICATE BACKGROUND DETAILS: Circuit Board Layers for digital themes */}
+      {(theme.id === "neon-racer" || theme.id === "cyberpunk-2077" || theme.id === "neon-nights" || theme.id === "tactical-ops") && (
+        <div className="absolute inset-0 opacity-[0.25] mix-blend-screen pointer-events-none z-[1]" style={{ color: theme.primaryColor }}>
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" preserveAspectRatio="none">
+            {/* Left board traces */}
+            <path d="M 0,50 L 150,50 L 220,120 L 350,120 L 380,90 L 450,90" fill="none" stroke="currentColor" strokeWidth="0.75" strokeDasharray="3,3" />
+            <path d="M 100,0 L 100,80 L 140,120 L 280,120" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            <path d="M 50,250 L 180,250 L 220,290 L 320,290 L 350,260 L 440,260" fill="none" stroke="currentColor" strokeWidth="0.75" />
+            <path d="M 280,30 L 250,60 L 250,180 L 210,220 L 210,320" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5,5" />
+            
+            {/* Right board traces */}
+            <path d="M 1000,50 L 850,50 L 780,120 L 650,120 L 620,90 L 550,90" fill="none" stroke="currentColor" strokeWidth="0.75" strokeDasharray="3,3" />
+            <path d="M 900,0 L 900,80 L 860,120 L 720,120" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            <path d="M 950,250 L 820,250 L 780,290 L 680,290 L 650,260 L 560,260" fill="none" stroke="currentColor" strokeWidth="0.75" />
+            <path d="M 720,30 L 750,60 L 750,180 L 790,220 L 790,320" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5,5" />
+
+            {/* Glowing trace nodes */}
+            <circle cx="220" cy="120" r="2" fill="currentColor" />
+            <circle cx="350" cy="120" r="1.5" fill="currentColor" />
+            <circle cx="140" cy="120" r="2" fill="currentColor" className="animate-pulse" />
+            <circle cx="220" cy="290" r="2" fill="currentColor" />
+            <circle cx="320" cy="290" r="1.5" fill="currentColor" className="animate-pulse" />
+            <circle cx="210" cy="220" r="2" fill="currentColor" />
+            
+            <circle cx="780" cy="120" r="2" fill="currentColor" />
+            <circle cx="650" cy="120" r="1.5" fill="currentColor" />
+            <circle cx="860" cy="120" r="2" fill="currentColor" className="animate-pulse" />
+            <circle cx="780" cy="290" r="2" fill="currentColor" />
+            <circle cx="680" cy="290" r="1.5" fill="currentColor" className="animate-pulse" />
+            <circle cx="790" cy="220" r="2" fill="currentColor" />
+
+            {/* Faux microprocessors */}
+            <rect x="290" y="45" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="0.75" />
+            <line x1="290" y1="51" x2="284" y2="51" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="290" y1="57" x2="284" y2="57" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="290" y1="63" x2="284" y2="63" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="314" y1="51" x2="320" y2="51" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="314" y1="57" x2="320" y2="57" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="314" y1="63" x2="320" y2="63" stroke="currentColor" strokeWidth="0.5" />
+
+            <rect x="686" y="45" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="0.75" />
+            <line x1="686" y1="51" x2="680" y2="51" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="686" y1="57" x2="680" y2="57" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="686" y1="63" x2="680" y2="63" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="710" y1="51" x2="716" y2="51" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="710" y1="57" x2="716" y2="57" stroke="currentColor" strokeWidth="0.5" />
+            <line x1="710" y1="63" x2="716" y2="63" stroke="currentColor" strokeWidth="0.5" />
+          </svg>
+        </div>
+      )}
+
+      {/* INTRICATE BACKGROUND DETAILS: Brushed Aluminum texture design for luxury/stealth types */}
+      {(theme.id === "luxury-alcantara-v2" || theme.id === "universal-jdm-legend" || theme.id === "steampunk-gears" || theme.texture === "brushed" || theme.texture === "machined") && (
+        <div className="absolute inset-0 opacity-[0.24] mix-blend-overlay pointer-events-none z-[1] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.2)_0%,transparent_80%),repeating-linear-gradient(45deg,rgba(0,0,0,0)_0px,rgba(0,0,0,0)_3px,rgba(255,255,255,0.03)_3px,rgba(255,255,255,0.03)_6px),repeating-linear-gradient(-135deg,rgba(0,0,0,0)_0px,rgba(0,0,0,0)_3px,rgba(0,0,0,0.04)_3px,rgba(0,0,0,0.04)_6px)]" />
+      )}
+
+      {/* Hex grid overlay for technical depth */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.01),transparent_70%)] bg-[size:10px_10px] pointer-events-none opacity-30 z-0" />
+
       {/* High-End Technical Scanline Effect */}
       <div className="absolute inset-0 z-[65] pointer-events-none opacity-20 overflow-hidden">
         <div className="w-full h-[1cqh] bg-white/10 blur-[2cqh] animate-[scan_6s_linear_infinite]" />
@@ -123,18 +182,38 @@ export const PremiumCircularGauge: React.FC<
             )}
           </div>
 
-          <div className="w-[86%] h-full bg-[#050505] border-y border-white/40 relative flex overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.9)] transition-none">
+          <div className="w-[86%] h-full bg-[#050505] border-y border-white/40 relative flex overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.9)] transition-none font-sans">
             <div className="absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-white/20 to-transparent z-30 pointer-events-none mix-blend-overlay" />
             <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_4.9%,rgba(255,255,255,0.15)_4.9%,rgba(255,255,255,0.15)_5.1%)] z-10 pointer-events-none transition-none" />
             <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.8)] z-20 pointer-events-none" />
+            
+            {/* Lagging phosphor decay trail (Phosphor Ghost Trail) */}
+            <div 
+              className="h-full absolute left-0 top-0 opacity-40 blur-[3px] ease-out transition-all duration-300 pointer-events-none z-0"
+              style={{
+                width: `${Math.max(0, Math.min(100, ((currentRpm - 630) / 7740) * 100))}%`,
+                background: `linear-gradient(90deg, transparent, ${theme.accentColor || "#ff1111"} 92%, #ffffff 100%)`,
+                boxShadow: `0 0 25px ${theme.accentColor || "#ff1111"}`
+              }}
+            />
+
+            {/* Core active progress bar */}
             <div
-              className="h-full relative z-0 transition-none"
+              className="h-full relative z-10 transition-none"
               style={{
                 width: `${Math.max(0, Math.min(100, ((currentRpm - 630) / 7740) * 100))}%`,
                 background: `linear-gradient(90deg, ${theme.primaryColor} 0%, ${theme.primaryColor} 70%, #ffffff 88%, ${theme.accentColor || "#ff1111"} 96%)`,
-                boxShadow: `0 0 40px ${theme.primaryColor}, inset 0 2px 5px rgba(255,255,255,0.8)`,
+                boxShadow: `0 0 35px ${theme.primaryColor}, inset 0 2px 4px rgba(255,255,255,0.8)`,
               }}
-            />
+            >
+              {/* Intelligent End Comet Head Flare */}
+              <div 
+                className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-[130%] -mr-1.5 rounded-full bg-white blur-[1.5px] animate-pulse z-25 pointer-events-none"
+                style={{
+                  boxShadow: `0 0 15px #fff, 0 0 30px ${theme.accentColor || "#ff1111"}`
+                }}
+              />
+            </div>
           </div>
 
           <div
@@ -234,6 +313,11 @@ export const PremiumCircularGauge: React.FC<
 
         {/* Center: THE MAIN EVENT */}
         <div className="flex flex-col items-center justify-center px-[2cqw] shrink-0 relative mt-[-6cqh] z-30 scale-125">
+          {/* Symmetrical telemetry orbital scanning concentric rings */}
+          <div className="absolute w-[40cqh] h-[40cqh] rounded-full opacity-[0.25] border-[1.5px] border-dashed border-white/30 pointer-events-none -z-10 animate-spin-slow" />
+          <div className="absolute w-[34cqh] h-[34cqh] rounded-full opacity-[0.16] border-[2px] border-white/40 pointer-events-none -z-10 animate-spin-slow-reverse" style={{ borderColor: theme.primaryColor }} />
+          <div className="absolute w-[28cqh] h-[28cqh] rounded-full opacity-[0.08] bg-gradient-to-t from-transparent via-white/8 to-transparent pointer-events-none -z-10 animate-[spin_8s_linear_infinite]" />
+          
           {theme.glow && (
             <div
               className="absolute inset-x-[-25cqw] top-[-15cqw] bottom-[-20cqw] bg-white/[0.05] rounded-[50%] blur-[80px] z-[-1] animate-pulse"
