@@ -2,11 +2,13 @@
 
 ### *Premium Android Car Launcher & Custom Digital Gauge Cluster for OBD2 Telemetry*
 
-![OBDash Main Dashboard](public/images/screenshots/Screenshot_20260723_080846_OBDash_2026.jpg)
-
-![OBDash Audio DSP](public/images/screenshots/Screenshot_20260723_080909_OBDash_2026.jpg)
-
-![OBDash Settings](public/images/screenshots/Screenshot_20260723_081007_OBDash_2026.jpg)
+<p align="center">
+  <img src="public/images/playstore_feature.jpg" width="100%" alt="OBDash Widescreen Showcase" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
+</p>
+<p align="center">
+  <img src="public/images/playstore_mockup.jpg" width="48%" alt="OBDash Tablet Mockup" style="border-radius: 12px; margin-right: 2%; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
+  <img src="public/images/reddit_promo.jpg" width="48%" alt="OBDash Reddit Promo" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=for-the-badge&logo=typescript" />
@@ -53,7 +55,9 @@ OBDash is fully skin-customizable. Drivers can switch between unique themes at t
 
 ### 1. F1 LCD Precision Dashboard
 Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings high-density motorsport telemetry into sharp focus.
-![F1 Precision LCD Skin](public/images/screenshots/Screenshot_20260723_080922_OBDash_2026.jpg)
+<p align="center">
+  <img src="public/images/f1_precision_skin.jpg" width="70%" alt="F1 Precision LCD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
+</p>
 
 *   **Sequential Shift LED Beam**: Dynamic green-yellow-red-blue indicator row prompting ideal shifting frames.
 *   **Massive Center Gear Registry**: Oversized hyper-legible gear display.
@@ -61,7 +65,9 @@ Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings
 
 ### 2. Fighter Jet HUD (Heads-Up Display)
 Inspired by military-grade aviation, the Tactical HUD uses bright neon vector ribbons and target reticles for high-speed tracking.
-![Fighter Jet HUD Skin](public/images/screenshots/Screenshot_20260723_080933_OBDash_2026.jpg)
+<p align="center">
+  <img src="public/images/hud_tactical_skin.jpg" width="70%" alt="Fighter Jet HUD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
+</p>
 
 *   **Aviation Ribbons**: Interactive scrolling speed and altitude ribbons matching current drive states.
 *   **Concentric Radar Scope**: Simulates localized sweeping coordinates linked to active lateral forces.
