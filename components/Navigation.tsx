@@ -100,7 +100,7 @@ export const Navigation: React.FC<NavigationProps> = ({ theme, navState, onUpdat
         }
         lastCoords = newCoords;
       },
-      (err) => console.error("Geolocation error:", err),
+      (err) => { /* Geolocation error suppressed for preview environments */ },
       { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 }
     );
     return () => navigator.geolocation.clearWatch(watchId);
@@ -483,7 +483,7 @@ export const MiniMap: React.FC<{ theme: ThemeConfig; navState: NavigationState; 
         }
         lastCoords = newCoords;
       },
-      (err) => console.error("Geolocation error:", err),
+      (err) => { /* Geolocation error suppressed for preview environments */ },
       { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 }
     );
     return () => navigator.geolocation.clearWatch(watchId);

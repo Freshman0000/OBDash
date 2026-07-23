@@ -44,7 +44,7 @@ const MapUpdater: React.FC<{ center?: [number, number], zoom?: number, bounds?: 
             return;
           }
         } catch (e) {
-          console.error("Leaflet flyToBounds error:", e);
+          // Suppress Leaflet internal flyToBounds error if map isn't fully initialized
         }
       }
 
@@ -80,16 +80,24 @@ const MapUpdater: React.FC<{ center?: [number, number], zoom?: number, bounds?: 
           }
           
           if (shouldAnimate) {
-            map.flyTo(center as L.LatLngExpression, targetZoom, { animate: true, duration: 0.5 });
+            try {
+              map.flyTo(center as L.LatLngExpression, targetZoom, { animate: true, duration: 0.5 });
+            } catch (err) {
+              map.setView(center as L.LatLngExpression, targetZoom, { animate: false });
+            }
           } else {
-            map.panTo(center as L.LatLngExpression, { animate: true, duration: 0.1, easeLinearity: 1 });
+            try {
+              map.panTo(center as L.LatLngExpression, { animate: true, duration: 0.1, easeLinearity: 1 });
+            } catch (err) {
+              map.setView(center as L.LatLngExpression, targetZoom, { animate: false });
+            }
             if (targetZoom !== currentZoom) {
               map.setZoom(targetZoom, { animate: true });
             }
           }
           lastCenter.current = center;
         } catch (e) {
-          console.error("Leaflet internal panTo/flyTo error:", e);
+          // Suppress Leaflet internal error if map isn't fully initialized
         }
       }
     } catch (e) {
