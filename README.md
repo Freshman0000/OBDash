@@ -3,19 +3,7 @@
 ### *Premium Android Car Launcher & Custom Digital Gauge Cluster for OBD2 Telemetry*
 
 <p align="center">
-  <img src="public/images/Screenshot_20260722_195407_Chrome.jpg" width="100%" alt="OBDash Widescreen Showcase" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
-</p>
-<p align="center">
-  <img src="public/images/playstore_mockup.jpg" width="48%" alt="OBDash Tablet Mockup" style="border-radius: 12px; margin-right: 2%; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
-  <img src="public/images/reddit_promo.jpg" width="48%" alt="OBDash Reddit Promo" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8);" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Language-TypeScript-blue?style=for-the-badge&logo=typescript" />
-  <img src="https://img.shields.io/badge/Framework-React_18-61DAFB?style=for-the-badge&logo=react" />
-  <img src="https://img.shields.io/badge/Style-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" />
-  <img src="https://img.shields.io/badge/Platform-Android_Head_Units-A4C639?style=for-the-badge&logo=android" />
-</p>
+  <img src=src/assets/images/Screenshot_20260723_081007_OBDash_2026.jpg
 
 ---
 
