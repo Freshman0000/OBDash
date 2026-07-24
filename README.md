@@ -43,9 +43,9 @@ OBDash is fully skin-customizable. Drivers can switch between unique themes at t
 
 ### 1. F1 LCD Precision Dashboard
 Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings high-density motorsport telemetry into sharp focus.
+
 <p align="center">
-  <img src="public/images/f1_precision_skin.jpg" width="70%" alt="F1 Precision LCD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
-</p>
+  <img src=src/assets/images/Screenshot_20260722_195437_Chrome.jpg
 
 *   **Sequential Shift LED Beam**: Dynamic green-yellow-red-blue indicator row prompting ideal shifting frames.
 *   **Massive Center Gear Registry**: Oversized hyper-legible gear display.
