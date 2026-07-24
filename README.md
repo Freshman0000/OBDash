@@ -51,15 +51,12 @@ Inspired by modern Formula 1 and GT3 steering wheel displays, this design brings
 *   **Massive Center Gear Registry**: Oversized hyper-legible gear display.
 *   **Motorsport Matrix Telemetry**: Embedded telemetry modules displaying real-time Boost, Engine Load, Throttle %, and crucial battery and oil metrics.
 
-### 2. Fighter Jet HUD (Heads-Up Display)
-Inspired by military-grade aviation, the Tactical HUD uses bright neon vector ribbons and target reticles for high-speed tracking.
+### 2. Race telemetry overload UX/UI
+One of my favorites. Absolutely no shortage of pid data that can be changed by clicking on the pid area. 
 <p align="center">
-  <img src="public/images/hud_tactical_skin.jpg" width="70%" alt="Fighter Jet HUD Skin" style="border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.6);" />
+  <img src= /src/assets/images/Screenshot_20260723_080933_OBDash_2026.jpg>
 </p>
 
-*   **Aviation Ribbons**: Interactive scrolling speed and altitude ribbons matching current drive states.
-*   **Concentric Radar Scope**: Simulates localized sweeping coordinates linked to active lateral forces.
-*   **Aero-Fluorescent Dial Geometry**: Tactical data grids for temperature and pressure levels.
 
 ### 3. Other Immersive Theme Schemes
 *   **Carbon Sweep**: Smooth sweeping LEDs set against a high-contrast real-woven carbon fabric pattern.
@@ -68,6 +65,18 @@ Inspired by military-grade aviation, the Tactical HUD uses bright neon vector ri
 *   **Perspective Cluster**: Multi-layered 2.5D visual depth using subtle spatial isometric scaling that shifts gracefully with speed.
 *   **Quasar Cosmic Loop**: Celestial orb structure with deep space gravity loops tracking energy consumption and current momentum.
 
+Real-time audio DSP visual equalizer with 20 unique themes
+
+<p align="center">
+  <img src= src/assets/images/Screenshot_20260723_080857_OBDash_2026.jpg
+
+
+
+
+<p align="center">
+  <img src= src/assets/images/Screenshot_20260723_080909_OBDash_2026.jpg
+
+    
 ---
 
 ## ⚙️ Technical Highlights
